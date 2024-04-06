@@ -5,6 +5,7 @@ read -p "SSID Name: " ssidName
 read -e -p "P12 cert to import: " p12CertPath
 read -sp "Cert password: " p12Password
 
+#this don't work right.
 if test ! -d "/etc/wpa_supplicant/certs"; then
     echo "certs dir not found, creating it now"
     #mkdir /Users/aaron/certs
@@ -14,8 +15,6 @@ fi
 caCertPath="/Users/aaron/certs/ca-root.pem"
 privateKeyPath="/Users/aaron/certs/user.key.pem"
 clientCertPath="/Users/aaron/certs/client.crt.pem"
-
-echo "Password is: " $p12Password
 
 #Open SSL extract cert components
 #Private Key

@@ -21,6 +21,6 @@ echo "Password is: " $p12Password
 #Private Key
 eval "openssl pkcs12 -in "$p12CertPath "-nocerts -nodes -out "$privateKeyPath "-password pass:"$p12Password
 #Certificate
-#openssl pkcs12 -in $p12CertPath -clcerts -nokeys -out $clientCertPath -password pass:$p12Password
+eval "openssl pkcs12 -in "$p12CertPath "-clcerts -nokeys -out "$clientCertPath "-password pass:"$p12Password
 #Root CA
-#openssl pkcs12 -in $p12CertPath -cacerts -nokeys -chain -out $caCertPath -password pass:$p12Password
+eval "openssl pkcs12 -in "$p12CertPath "-cacerts -nokeys -chain -out "$caCertPath "-password pass:"$p12Password

@@ -7,7 +7,7 @@ read -sp "Cert password: " p12Password
 #this don't work right.
 if test ! -d "/etc/wpa_supplicant/certs"; then
     echo "certs dir not found, creating it now"
-    #mkdir /Users/aaron/certs
+    mkdir /etc/wpa_supplicant/certs
 fi
 
 #Cert names and storage paths

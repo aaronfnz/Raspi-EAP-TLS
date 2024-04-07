@@ -11,9 +11,9 @@ if test ! -d "/etc/wpa_supplicant/certs"; then
 fi
 
 #Cert names and storage paths
-caCertPath="/Users/aaron/certs/ca-root.pem"
-privateKeyPath="/Users/aaron/certs/user.key.pem"
-clientCertPath="/Users/aaron/certs/client.crt.pem"
+caCertPath="/etc/wpa_supplicant/certs/ca-root.pem"
+privateKeyPath="/etc/wpa_supplicant/certs/user.key.pem"
+clientCertPath="/etc/wpa_supplicant/certs/client.crt.pem"
 
 #Open SSL extract cert components
 #Private Key
@@ -24,7 +24,7 @@ eval "openssl pkcs12 -in "$p12CertPath "-clcerts -nokeys -out "$clientCertPath "
 eval "openssl pkcs12 -in "$p12CertPath "-cacerts -nokeys -chain -out "$caCertPath "-password pass:"$p12Password
 
 #Create WPA config file
-cat > /c/temp/wpa_supplicant.config <<- EOM
+cat > /etc/wpa_supplicant/certs/wpa_supplicant.config <<- EOM
 ctrl_interface=/var/run/wpa_supplicant
 update_config=1
 country=NZ
